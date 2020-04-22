@@ -25,6 +25,8 @@ void setup() {
   // initialize the button pin as a input:
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(buttonPin1, INPUT_PULLUP);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
 
 }
 
@@ -50,12 +52,16 @@ void loop() {
     if (buttonPushCounter != 0)
     {
       Serial.println("CANTON OCCUPE");
+      digitalWrite(9, HIGH);
+      digitalWrite(8, LOW);
       myOLED.setFont(SmallFont);
       myOLED.print("CANTON OCCUPE",CENTER,0);
       myOLED.update();
       myOLED.clrScr();
     } else {
       Serial.println("CANTON LIBRE");
+      digitalWrite(9, LOW);
+      digitalWrite(8, HIGH);
       myOLED.setFont(SmallFont);
       myOLED.print("CANTON LIBRE",CENTER,0);
       myOLED.update();
@@ -87,12 +93,16 @@ void loop() {
     if (buttonPushCounter != 0)
     {
       Serial.println("CANTON OCCUPE");
+      digitalWrite(9, HIGH);
+      digitalWrite(8, LOW);
       myOLED.setFont(SmallFont);
       myOLED.print("CANTON OCCUPE",CENTER,0);
       myOLED.update();
       myOLED.clrScr();
     } else {
       Serial.println("CANTON LIBRE");
+      digitalWrite(9, LOW);
+      digitalWrite(8, HIGH);
       myOLED.setFont(SmallFont);
       myOLED.print("CANTON LIBRE",CENTER,0);
       myOLED.update();
